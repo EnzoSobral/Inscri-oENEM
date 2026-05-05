@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Inscrição ENEM / PROUNI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Inscrição ENEM</h1>
+
+  <!-- FORMULÁRIO -->
+  <label>Nome</label>
+  <input type="text" id="nome">
+
+  <label>CPF</label>
+  <input type="text" id="cpf">
+
+  <label>Data de Nascimento</label>
+  <input type="date" id="nascimento">
+
+  <label>Email</label>
+  <input type="email" id="email">
+
+  <label>Telefone</label>
+  <input type="tel" id="telefone" placeholder="(11) 99999-9999">
+
+  <label>Programa</label>
+  <select id="programa">
+    <option>ENEM</option>
+    <option>PROUNI</option>
+  </select>
+
+  <label>Instituição</label>
+  <input type="text" id="instituicao">
+
+  <button onclick="gerarRelatorio()">Gerar Relatório</button>
+
+  <! RELATÓRIO >
+  <div class="relatorio" id="relatorio">
+    <h2>Relatório de Inscrição</h2>
+    <p><strong>Nome:</strong> <span id="r_nome"></span></p>
+    <p><strong>CPF:</strong> <span id="r_cpf"></span></p>
+    <p><strong>Data de Nascimento:</strong> <span id="r_nascimento"></span></p>
+    <p><strong>Email:</strong> <span id="r_email"></span></p>
+    <p><strong>Telefone:</strong> <span id="r_telefone"></span></p>
+    <p><strong>Programa:</strong> <span id="r_programa"></span></p>
+    <p><strong>Curso:</strong> <span id="r_curso"></span></p>
+    <p><strong>Instituição:</strong> <span id="r_instituicao"></span></p>
+  </div>
+
+</div>
+
+<script>
+function gerarRelatorio() {
+  document.getElementById("r_nome").innerText = document.getElementById("nome").value;
+  document.getElementById("r_cpf").innerText = document.getElementById("cpf").value;
+  document.getElementById("r_nascimento").innerText = document.getElementById("nascimento").value;
+  document.getElementById("r_email").innerText = document.getElementById("email").value;
+  document.getElementById("r_telefone").innerText = document.getElementById("telefone").value;
+  document.getElementById("r_programa").innerText = document.getElementById("programa").value;
+  document.getElementById("r_curso").innerText = document.getElementById("curso").value;
+  document.getElementById("r_instituicao").innerText = document.getElementById("instituicao").value;
+
+  document.getElementById("relatorio").style.display = "block";
+}
+</script>
+
+</body>
+</html>
